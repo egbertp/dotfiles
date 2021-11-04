@@ -1,0 +1,246 @@
+############################################
+### General settings
+############################################
+# IdentitiesOnly yes
+
+############################################
+### RABOBANK
+############################################
+Host lsrv4605
+  ForwardAgent yes
+  Hostname lsrv4605.linux.rabobank.nl
+  User potebbb
+  #IdentityFile ~/.ssh/id_rsa.pub
+
+Host lsrv9904
+  ForwardAgent yes
+  User facet
+  IdentityFile ~/.ssh/id_rsa.pub
+
+Host lsrv????
+  ForwardAgent yes
+  User potebbb
+  #IdentityFile ~/.ssh/id_rsa.pub
+
+Host bst-vpn1
+  ForwardAgent yes
+  Hostname 172.30.96.1
+  User potebbb
+  IdentityFile ~/.ssh/id_rsa_yubikey_5.pub
+
+Host bst-vpn2
+  ForwardAgent yes
+  Hostname 172.30.98.1
+  user potebbb
+  #IdentityFile ~/.ssh/id_rsa_yubikey_5.pub
+  #IdentitiesOnly yes
+
+Host bxt-vpn1
+  ForwardAgent yes
+  Hostname 172.30.100.1
+  User potebbb
+
+Host bxt-vpn2
+  ForwardAgent yes
+  Hostname 172.30.102.1
+  user potebbb
+
+Host esx.knutsel.space
+  ForwardAgent yes
+  User egbert
+  IdentityFile ~/.ssh/id_rsa
+  IdentitiesOnly yes
+
+Host rabo-dev-vm
+  ForwardAgent yes
+  Hostname rabo-dev-vm.knutsel.space
+  user egbert
+  ControlMaster auto
+  ControlPath ~/.ssh/ansible-%r@%h:%p
+  ControlPersist 5m
+
+Host bastion-azure
+  Hostname hypolab-bastion.westeurope.cloudapp.azure.com
+  ForwardAgent yes
+#  ControlPath ~/.ssh/cm-%r@%h:%p
+#  ControlMaster auto
+#  ControlPersist 10m
+#  Port 22
+  User egbert
+
+Host bastion-azure-hypolab
+  Hostname hypolab-bastion.westeurope.cloudapp.azure.com
+  ForwardAgent yes
+  ControlPath ~/.ssh/hypolab-cm-%r@%h:%p
+  ControlMaster auto
+#  ControlPersist 10m
+  Port 22
+  User egbert
+
+
+# Host vault-dev-box
+#   HostName 192.168.178.5
+#   CheckHostIP no
+#   Port 22
+#   User vagrant
+#   IdentityFile ~/Development/Rabobank/VaultProject/Vault/.vagrant/machines/default/virtualbox/private_key
+
+
+############################################
+### PRIVATE
+############################################
+Host vm01
+  ForwardAgent yes
+  hostname vm01.egbertpot.nl
+  port 22
+  user egbert
+  IdentityFile ~/.ssh/id_rsa_yubikey_4c_nano_fips_140_2.pub
+
+Host vm02
+  ForwardAgent yes
+  hostname vm02.epiclab.net
+  port 22
+  user root
+  IdentityFile ~/.ssh/id_rsa_yubikey_4c_nano_fips_140_2.pub
+
+Host phy01-fw
+  ForwardAgent yes
+  Hostname phy01-fw.knutsel.space
+  #IdentityFile ~/.ssh/id_rsa_yubikey_5.pub
+  #IdentitiesOnly yes
+
+Host phy02-fw
+  ForwardAgent yes
+  Hostname phy02-fw.knutsel.space
+  #IdentityFile ~/.ssh/id_rsa_yubikey_4c.pub
+  #IdentitiesOnly yes
+
+Host storage
+  ForwardAgent yes
+  #Hostname storage.egbert.space
+  #Hostname 94.142.244.47
+  Hostname 192.168.10.4
+  #IdentityFile ~/.ssh/id_rsa_yubikey_4c_nano_fips_140_2.pub
+  IdentityFile ~/.ssh/id_rsa_yubikey_5.pub
+
+Host vm02
+  ForwardAgent yes
+  Hostname vm02.egbertpot.nl
+  Port 22
+  User root
+
+Host gatekeeper
+  Hostname 192.168.10.1
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_rsa_yubikey_5.pub
+  IdentitiesOnly yes
+
+Host gatekeeper.vinkeveen
+  Hostname 192.168.79.1
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_rsa_yubikey_5.pub
+  IdentitiesOnly yes
+
+Host gatekeeper.amsterdam
+  Hostname gatekeeper.amsterdam.egbert.space
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_rsa_yubikey_4c.pub
+  IdentitiesOnly yes
+
+Host gatekeeper-open
+  Hostname 192.168.10.7
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_rsa_yubikey_4c_nano_fips_140_2.pub
+  IdentitiesOnly yes
+
+Host gatekeeper.zandelaan
+  Hostname 85.150.130.47
+  ForwardAgent yes
+
+############################################
+### ColoClue
+############################################
+Host service.coloclue.net
+  Hostname service.coloclue.net
+  User egbertp
+  IdentityFile ~/.ssh/id_rsa_yubikey_4c_nano_fips_140_2.pub
+
+
+############################################
+### EXAMPLE CONFIG
+############################################
+# # Azure westeurope DEV
+# Host *.westeurope.azure.rabobank.nl
+#   ProxyCommand ssh bastion-azure-we-d01 -W %h:%p
+#   ForwardAgent yes
+
+# # Azure northeurope DEV
+# Host *.northeurope.azure.rabobank.nl
+#   ProxyCommand ssh bastion-azure-ne-d01 -W %h:%p
+#   ForwardAgent yes
+
+############################################
+### via vm01.egbertpot.nl
+############################################
+# Host bastion-p01.westeurope.cloudapp.azure.com
+#     ForwardAgent yes
+#     ProxyCommand ssh vm01.egbertpot.nl nc bastion-p01.westeurope.cloudapp.azure.com 22
+#     # User ansible
+#     User potebbb
+
+# Host bastion-p01.northeurope.cloudapp.azure.com
+#     ForwardAgent yes
+#     ProxyCommand ssh vm01.egbertpot.nl nc bastion-p01.northeurope.cloudapp.azure.com 22
+#     # User ansible
+#     User potebbb
+
+# Host bastion-d01.westeurope.cloudapp.azure.com
+#     ForwardAgent yes
+#     ProxyCommand ssh vm01.egbertpot.nl nc bastion-d01.westeurope.cloudapp.azure.com 22
+#     # User ansible
+#     User potebbb
+
+# Host bastion-d01.northeurope.cloudapp.azure.com
+#     ForwardAgent yes
+#     ProxyCommand ssh vm01.egbertpot.nl nc bastion-d01.northeurope.cloudapp.azure.com 22
+#     # User ansible
+#     User potebbb
+
+# ############################################
+# ### DIRECT
+# ############################################
+
+Host bastion-p01.westeurope.cloudapp.azure.com
+    ForwardAgent yes
+
+# Host bastion-p01.northeurope.cloudapp.azure.com
+#   ForwardAgent yes
+
+Host bastion-d01.westeurope.cloudapp.azure.com
+    ForwardAgent yes
+
+# Host bastion-d01.northeurope.cloudapp.azure.com
+#   ForwardAgent yes
+
+#Host vm-vault-test
+#  Hostname vm-linux-base-prod-we-2166-1.rhd.azure.rabonet.com
+#  User ansible
+#  IdentityFile ~/Development/Rabobank/ssh-keys/rabo-lendingretail-team-angels/id_rsa_TeamAngels.pub
+#  IdentitiesOnly yes
+
+# Try to fix
+#Host *.rhd.azure.rabonet.com
+#  IdentityFile ~/.ssh/id_rsa_yubikey_4c.pubs
+#  IdentitiesOnly yes
+#
+Host opsman
+  ForwardAgent yes
+  Hostname 10.253.17.4
+  User ubuntu
+  IdentityFile ~/.ssh/opsman
+  IdentitiesOnly yes
+
+Host bastion-fuse
+  ForwardAgent yes
+  Hostname bastion.opc-bt.mwinfra.rabonet.com
+  User potebbb
