@@ -75,7 +75,5 @@
   "oracledevtools.download.otherFolder": "/Users/egbert/downloads",
   "oracledevtools.connectionConfiguration.configFilesFolder": "/Users/egbert/Oracle/network/admin",
   "oracledevtools.connectionConfiguration.walletFileFolder": "/Users/egbert/Oracle/network/admin",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "window.zoomLevel": 1
+  "diffEditor.ignoreTrimWhitespace": false
 }
-
