@@ -1,39 +1,11 @@
 {
-  "telemetry.enableTelemetry": false,
-  "workbench.colorTheme": "One Dark Pro",
-  "editor.fontFamily": "'Meslo LG M DZ for Powerline', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 14,
-  //"vim.handleKeys": {
-  //    "<C-c>": false,
-  //    "<C-v>": false
-  //},
-  // "vim.easymotion": true,
-  // "vim.incsearch": true,
-  // "vim.useSystemClipboard": true,
-  // "vim.useCtrlKeys": true,
-  // "vim.hlsearch": true,
-  // "vim.insertModeKeyBindings": [
-  //     {
-  //     "before": ["j", "j"],
-  //     "after": ["<Esc>"]
-  //     }
-  // ],
-  // "vim.normalModeKeyBindingsNonRecursive": [
-  //     {
-  //     "before": ["<leader>", "d"],
-  //     "after": ["d", "d"]
-  //     },
-  //     {
-  //     "before": ["<C-n>"],
-  //     "commands": [":nohl"]
-  //     }
-  // ],
-  // "vim.leader": "<space>",
-  // "vim.handleKeys": {
-  //     "<C-a>": false,
-  //     "<C-f>": false
-  // },
+  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font', monospace",
+  "terminal.integrated.fontSize": 14,
+  "svelte.enable-ts-plugin": true,
   "git.confirmSync": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.fontFamily": "'MesloLGS Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "git.autofetch": true,
@@ -54,7 +26,6 @@
   "prettier.singleQuote": true,
   "editor.tabSize": 2,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -62,18 +33,20 @@
     "**/.factorypath": true
   },
   "go.toolsManagement.autoUpdate": true,
-  "java.project.importOnFirstTimeStartup": "automatic",
-  "java.maven.downloadSources": true,
-  "java.saveActions.organizeImports": true,
   "redhat.telemetry.enabled": false,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
   "git.suggestSmartCommit": false,
-  "openapi.securityAuditToken": "CiCVkSzPaJG4cOgK+k8zpR5cOwFiViFjnxTdFqRRHdLMOBIYLlnvUGMGT+vz0pZxwZLPaLOR0Z34g0+xGncXfpci75BT71n830ke+mIAy2uIKb6Xnj42GEDJ8NPkcH8aDX3JJ4OW+IzMGH3U5iKj8fSRUVJbCiffKRBXZAWo8Jlb9NeG2rn7cMBwBNZ/MoiUkQIf2UdRuEkHvPYxLGOs0wZUSX5uHyl3wa7vJoohb4orPspEQA==",
-  "oracledevtools.bookmarkFileFolder": "/Users/egbert/Oracle/oracle.oracledevtools",
-  "oracledevtools.download.otherFolder": "/Users/egbert/downloads",
-  "oracledevtools.connectionConfiguration.configFilesFolder": "/Users/egbert/Oracle/network/admin",
-  "oracledevtools.connectionConfiguration.walletFileFolder": "/Users/egbert/Oracle/network/admin",
-  "diffEditor.ignoreTrimWhitespace": false
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 1,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "terminal.integrated.fontWeightBold": "bold",
+  "terminal.integrated.fontWeight": "normal"
 }
