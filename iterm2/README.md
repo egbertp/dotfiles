@@ -11,3 +11,5 @@
 - [VS Code documentation - User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings)
 
 - [Starship - The minimal, blazing-fast, and infinitely customizable prompt for any shell! ](https://starship.rs/)
+
+- [NerdFonts cheat sheet](https://www.nerdfonts.com/cheat-sheet)
