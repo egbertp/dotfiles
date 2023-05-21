@@ -30,18 +30,20 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-format = "[$branch]($style)"
+#format = "[$branch]($style)"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+symbol = " "
 style = "bright-black"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
 style = "cyan"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
+conflicted = ""
+untracked = ""
+modified = ""
+staged = ""
+renamed = ""
+deleted = ""
 stashed = "≡"
 
 [git_state]
@@ -57,5 +59,14 @@ format = "[$virtualenv]($style) "
 style = "bright-black"
 
 [aws]
-symbol = "  "
+symbol = "󰸏 "
+disabled = true
+
+[azure]
+format = 'on [$symbol($subscription)]($style) '
+symbol = '󰠅 '
+disabled = true
+
+[gcloud]
+symbol = '️️󱇶 '
 disabled = true
