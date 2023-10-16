@@ -1,11 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Added by Egbert
-export PATH=/usr/local/opt/openssh/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/egbert/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -13,7 +10,6 @@ export ZSH="/Users/egbert/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
-#ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,16 +66,12 @@ ZSH_THEME="agnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Spaceship
-#SPACESHIP_PROMPT_ADD_NEWLINE="false"
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)
-plugins=(git)
+plugins=(git terraform docker docker-compose kubectl aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,22 +100,30 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# eval "$(starship init zsh)"
 
-DEFAULT_USER="egbert"
+export PATH=$PATH:/usr/local/go/bin:~/go/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH=$PATH:/Users/egbert/bin
 
-prompt_dir() {
-  prompt_segment blue black '%c'
-}
+#export PATH=$(brew --prefix openssh)/bin:$PATH
+#export PATH="$HOME/bin":$PATH
 
-prompt_context() {
-  # Custom (Random emoji)
-  emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🌈" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙")
-  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
-  prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
-}
+#if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
+#    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+#fi
+#export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
-[ -f "/Users/egbert/.ghcup/env" ] && source "/Users/egbert/.ghcup/env" # ghcup-env
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export GPG_TTY=$(tty)
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-18.0.2.jdk/Contents/Home
+#export AWS_REGION="eu-west-1"
 
+eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/egbert/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/egbert/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/egbert/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/egbert/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
