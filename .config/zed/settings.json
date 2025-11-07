@@ -11,6 +11,8 @@
     "diagnostics": true,
     "metrics": true
   },
+  "format_on_save": "off",
+
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
@@ -28,3 +30,4 @@
     "dark": "One Dark"
   }
 }
+
