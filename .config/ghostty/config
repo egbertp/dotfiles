@@ -1,0 +1,7 @@
+#keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+command = /bin/zsh
+background-opacity = 0.9
+macos-option-as-alt = true
+font-family = Fira Code Mono
+theme = Catppuccin Mocha
