@@ -12,3 +12,10 @@ Your original zsh config was restored.
 Thanks for trying out Oh My Zsh. It's been uninstalled.
 Don't forget to restart your terminal!
 ```
+
+
+### Install a preset
+
+```shell
+$ starship preset catppuccin-powerline -o ~/.config/starship.toml
+```
